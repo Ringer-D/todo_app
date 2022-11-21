@@ -1,7 +1,7 @@
 {
 
   "scripts": {
-    "build-css": "npx tailwindcss -i src/style.css -o public/style.css --watch"
+    "build-css": "npx tailwindcss -i src/style.css -o public/css/style.css --watch"
   },
 
   "devDependencies": {
