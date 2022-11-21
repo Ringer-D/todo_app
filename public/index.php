@@ -7,7 +7,7 @@
     <link href="css/style.css" rel="stylesheet">
     <title>Todo-App</title>
 </head>
-<body class="bg-gray-900">
+<body class="bg-gray-800">
     
 </body>
 </html>
