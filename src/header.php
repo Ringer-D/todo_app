@@ -14,4 +14,4 @@
     </header>
 
     <main>
-        <div class="container flex flex-row justify-center mt-10">
+        <div class="container flex flex-col justify-center mt-10">
