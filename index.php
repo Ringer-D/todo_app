@@ -17,7 +17,7 @@
         </p>
 
         <p>
-            <input type="submit" value="add new" class="btn p-2 bg-green-600 text-white hover:bg-green-700 hover:cursor-pointer rounded-sm">
+            <input type="submit" value="add new" class="btn p-2 bg-red-600 text-white hover:bg-green-700 hover:cursor-pointer rounded-sm">
         </p>
     </form>
 </div>
