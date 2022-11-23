@@ -1,4 +1,4 @@
-<?php include "./src/header.php" ?>
+<?php include "_partials/header.php" ?>
 
 <div class="page-header text-center mb-12 text-3xl text-white">
     <h1>v3ry gOOd TODO APP</h1>
@@ -22,4 +22,4 @@
     </form>
 </div>
 
-<?php include "./src/footer.php" ?>
+<?php include "_partials/footer.php" ?>
