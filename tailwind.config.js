@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "src/**/*.{html,php,css,js}",
-    "public/index.php",
+    "index.php",
     
   ],
   theme: {
