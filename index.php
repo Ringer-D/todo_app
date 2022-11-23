@@ -4,20 +4,24 @@
     <h1>v3ry gOOd TODO APP</h1>
 </div>
 
+<?php $data = $database -> select( 'items', 'text' ); ?>
+
 <div class="container-main container flex flex-row justify-center items-start">
-    <ul class="text-white border border-white/[.20] rounded-sm w-96 mr-10">
-        <li class="border-b border-white/[.20] p-1 pl-2">Do it !</li>
-        <li class="border-b border-white/[.20] p-1 pl-2">Do it again !</li>
-        <li class="p-1 pl-2">Workout</li>
+    <ul class="text-white w-96 mr-10">
+        <?php
+            foreach( $data as $item ) {
+                echo '<li class="p-1 pl-2 mb-1 border border-white/[.20] rounded">' . $item . '</li>';
+            }
+        ?>
     </ul>
 
-    <form action="add-new.php">
+    <form action="_inc/add-new.php" method="post">
         <p>
-            <textarea class="resize-none w-96 rounded-sm" name="message" id="text" placeholder="Do it !" rows="3"></textarea>
+            <textarea class="resize-none w-96 mb-1 border border-white/[.20] rounded bg-inherit text-white" name="message" id="text" placeholder="Do it !" rows="3"></textarea>
         </p>
 
         <p>
-            <input type="submit" value="add new" class="btn p-2 bg-red-600 text-white hover:bg-green-700 hover:cursor-pointer rounded-sm">
+            <input type="submit" value="add new" class="btn p-2 border border-white/[.20] rounded bg-inherit hover:bg-green-700 text-white hover:cursor-pointer">
         </p>
     </form>
 </div>

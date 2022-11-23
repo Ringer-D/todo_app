@@ -25,7 +25,3 @@ $database = new Medoo([
     'collation' => 'utf8mb4_general_ci',
 
 ]);
-
-echo '<pre>';
-print_r( $database->info() );
-echo '</pre>';
