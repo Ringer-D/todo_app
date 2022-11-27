@@ -1,10 +1,16 @@
 {
 
   "scripts": {
+
     "build-css": "npx tailwindcss -i _inc/tw-style.css -o assets/css/style.css --watch"
+
   },
 
   "devDependencies": {
+
     "tailwindcss": "^3.2.4"
+
   }
+
 }
+
