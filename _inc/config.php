@@ -10,9 +10,13 @@ error_reporting(-1);
 
 require_once 'vendor/autoload.php';
 
-use Medoo\Medoo;
+// whoops errors
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
 
 // connect to DB
+use Medoo\Medoo;
 
 $database = new Medoo([
 	// [required]
