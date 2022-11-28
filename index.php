@@ -7,7 +7,7 @@
 <?php $data = $database -> select( 'items', 'text' ); ?>
 
 <div class="container-main container flex flex-row justify-center items-start">
-    <ul class="text-white w-96 mr-10">
+    <ul class="list-group text-white w-96 mr-10">
         <?php
             foreach( $data as $item ) {
                 echo '<li class="p-1 pl-2 mb-1 border border-white/[.20] rounded">' . $item . '</li>';
@@ -15,9 +15,9 @@
         ?>
     </ul>
 
-    <form action="_inc/add-new.php" method="post">
+    <form id="add-form" action="_inc/add-new.php" method="post">
         <p>
-            <textarea class="resize-none w-96 mb-1 border border-white/[.20] rounded bg-inherit text-white" name="message" id="text" placeholder="Do it !" rows="3"></textarea>
+            <textarea id="text" class="resize-none w-96 mb-1 border border-white/[.20] rounded bg-inherit text-white" name="message" placeholder="Do it !" rows="3"></textarea>
         </p>
 
         <p>

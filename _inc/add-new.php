@@ -11,8 +11,6 @@ $id = $database -> insert( 'items', [
 ] );
 
 if( $id ) {
-    echo 'SENDED FUCK YEAH !'?><br><?php ;
-    $html = '<a href="/todo_app">back home</a>';
-    echo $html;
+    die('success');
 }
 
