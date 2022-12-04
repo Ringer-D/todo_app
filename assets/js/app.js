@@ -21,17 +21,25 @@ form.on('submit', function(event) {
                 
                 var li = $( '<li class="p-1 pl-2 mb-1 border border-white/[.20] rounded"> '+ input.val() +' </li>' );
                 
-                li.hide()
-                    .appendTo('.list-group')
-                    .fadeIn();
+                li.appendTo('.list-group')
+                    .css({ backgroundColor: '#00803D' })
+                    .delay(200)
+                    .animate({ backgroundColor: '#1F2937' });
                 
                 input.val('');
-            }
+            };
 
 
         };
     });
 });
+
+input.keypress( function(event) {
+    if( event.which === 13 ) {
+        form.submit();
+        return false;
+    }
+})
 
 
 }(jQuery));
