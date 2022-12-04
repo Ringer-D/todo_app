@@ -1,4 +1,4 @@
-<?php include "_partials/header.php" ?>
+<?php include_once "_partials/header.php" ?>
 
 <div class="page-header text-center mb-12 text-3xl text-white">
     <h1>v3ry gOOd TODO APP</h1>
@@ -17,13 +17,13 @@
 
     <form id="add-form" action="_inc/add-new.php" method="post">
         <p>
-            <textarea id="text" class="resize-none w-96 mb-1 border border-white/[.20] rounded bg-inherit text-white" name="message" placeholder="Do it !" rows="3"></textarea>
+            <textarea id="text" class="resize-none w-96 mb-1 p-2 border border-white/[.20] rounded bg-inherit text-white" name="message" placeholder="Do it !" rows="3"></textarea>
         </p>
 
-        <p>
+        <!-- <p>
             <input type="submit" value="add new" class="btn p-2 border border-white/[.20] rounded bg-inherit hover:bg-green-700 text-white hover:cursor-pointer">
-        </p>
+        </p> -->
     </form>
 </div>
 
-<?php include "_partials/footer.php" ?>
+<?php include_once "_partials/footer.php" ?>
