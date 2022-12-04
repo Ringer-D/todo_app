@@ -1,7 +1,7 @@
 (function($){
 
 var form = $('#add-form');
-    input = $('#text');
+    input = form.find('#text');
 
 input.val('').focus();
 
