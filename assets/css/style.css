@@ -547,6 +547,18 @@ video {
   }
 }
 
+.relative {
+  position: relative;
+}
+
+.top-0\.5 {
+  top: 0.125rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -555,12 +567,16 @@ video {
   margin-right: 2.5rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .flex {
@@ -587,12 +603,16 @@ video {
   align-items: flex-start;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .justify-center {
   justify-content: center;
 }
 
-.rounded-sm {
-  border-radius: 0.125rem;
+.justify-between {
+  justify-content: space-between;
 }
 
 .rounded {
@@ -607,28 +627,13 @@ video {
   border-color: rgb(255 255 255 / .20);
 }
 
-.border-x-white\/\[\.20\] {
-  border-left-color: rgb(255 255 255 / .20);
-  border-right-color: rgb(255 255 255 / .20);
-}
-
-.border-y-white\/\[\.20\] {
-  border-top-color: rgb(255 255 255 / .20);
-  border-bottom-color: rgb(255 255 255 / .20);
-}
-
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+.bg-inherit {
+  background-color: inherit;
 }
 
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-
-.bg-inherit {
-  background-color: inherit;
 }
 
 .p-1 {
@@ -652,9 +657,28 @@ video {
   line-height: 2.25rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.text-green-700 {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+
+.no-underline {
+  text-decoration-line: none;
 }
 
 .hover\:cursor-pointer:hover {
@@ -664,4 +688,17 @@ video {
 .hover\:bg-green-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(21 128 61 / var(--tw-bg-opacity));
+}
+
+.hover\:font-bold:hover {
+  font-weight: 700;
+}
+
+.hover\:font-medium:hover {
+  font-weight: 500;
+}
+
+.hover\:text-red-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
