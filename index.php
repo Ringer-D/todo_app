@@ -23,7 +23,7 @@
 
     <form id="add-form" action="_inc/add-item.php" method="post">
         <p>
-            <textarea id="text" class="resize-none w-96 mb-1 border border-white/[.20] rounded bg-inherit text-white" name="message" placeholder="Do it !" rows="3"></textarea>
+            <textarea id="text" class="resize-none w-96 mb-1 p-2 border border-white/[.20] rounded bg-inherit text-white" name="message" placeholder="Do it !" rows="3"></textarea>
         </p>
 
         <!-- <p>
