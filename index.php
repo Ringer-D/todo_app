@@ -10,7 +10,7 @@
     <ul class="list-group text-white w-96 mr-10">
         <?php
             foreach( $data as $item ) {
-                echo '<li class="p-1 pl-2 mb-1 flex flex-row justify-between items-center border border-white/[.20] rounded">';
+                echo '<li id="item-'. $item[ 'id' ] .'" class="p-1 pl-2 mb-1 flex flex-row justify-between items-center border border-white/[.20] rounded">';
                 echo    $item[ 'text' ];
                 echo    '<div class="control flex flex-row items-center">';
                 echo        '<a href="edit.php?id='. $item[ 'id' ] .'" class="edit-link mr-2 p-1 text-sm text-green-700 hover:font-medium no-underline">edit</a>';
