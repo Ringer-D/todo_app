@@ -20,14 +20,17 @@
 <div class="container-main container flex flex-row justify-center items-start">
 
     <form id="edit-form" action="_inc/edit-item.php" method="post">
-        <p>
+        <div>
             <textarea id="text" class="resize-none w-96 mb-1 p-2 border border-white/[.20] rounded bg-inherit text-white" name="message" rows="3"><?php echo $item ?></textarea>
-        </p>
+        </div>
 
-        <p>
+        <div class="flex flex-row items-center text-gray-400">
             <input type="hidden" name="id" value="<?php echo $_GET[ 'id' ] ?>">
-            <input type="submit" value="edit item" class="btn p-2 border border-white/[.20] rounded bg-inherit hover:bg-green-700 text-white hover:cursor-pointer">
-        </p>
+            <input type="submit" value="edit item" class="btn p-2 mr-2 border border-white/[.20] rounded bg-inherit hover:bg-green-700 text-white hover:cursor-pointer">
+            <div class="controls">
+                <a href="<?php echo $site_url ?>" class="back-link text-sm hover:text-red-500">back</a>
+            </div>
+        </div>
     </form>
 </div>
 
