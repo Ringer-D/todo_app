@@ -15,14 +15,14 @@
         ?>
     </ul>
 
-    <form id="add-form" action="_inc/add-new.php" method="post">
+    <form id="add-form" action="_inc/add-item.php" method="post">
         <p>
             <textarea id="text" class="resize-none w-96 mb-1 border border-white/[.20] rounded bg-inherit text-white" name="message" placeholder="Do it !" rows="3"></textarea>
         </p>
 
-        <p>
+        <!-- <p>
             <input type="submit" value="add new" class="btn p-2 border border-white/[.20] rounded bg-inherit hover:bg-green-700 text-white hover:cursor-pointer">
-        </p>
+        </p> -->
     </form>
 </div>
 

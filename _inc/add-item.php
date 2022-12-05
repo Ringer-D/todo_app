@@ -2,7 +2,7 @@
 
 // include
 
-require 'config.php';
+require_once 'config.php';
 
 // add new item
 if( $_POST['message'] ) {
