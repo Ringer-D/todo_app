@@ -46,4 +46,13 @@ input.keypress( function(event) {
 
 $( '#edit-form' ).find('#text').trigger('select');
 
+// Delete Form -------------------------------------------------
+
+$( '#delete-form' ).on( 'submit', function( event ) {
+    return confirm('Really ?');
+});
+
+
+
+
 }(jQuery));
