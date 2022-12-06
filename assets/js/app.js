@@ -21,7 +21,7 @@ form.on('submit', function(event) {
             
         
                 
-                $.ajax({ url: '/todo_app' }).done( function(html) {
+                $.ajax({ url: '/todo_app/add.php' }).done( function(html) {
                     var newItem = $( html ).find( 'li:last-child' );
                     
                     newItem.appendTo('.list-group')

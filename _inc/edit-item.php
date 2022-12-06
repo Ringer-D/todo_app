@@ -16,5 +16,5 @@ require_once 'config.php';
 
 
 if( $affected ) {
-    header("Location: $site_url/index.php");
+    header("Location: $site_url");
 }
