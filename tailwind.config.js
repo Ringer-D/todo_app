@@ -3,7 +3,8 @@ module.exports = {
   content: [
     "_inc/tw-style.css",
     "_partials/*.php",
-    "index.php"
+    "index.php",
+    "add.php"
   ],
   theme: {
     extend: {},

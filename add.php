@@ -6,8 +6,8 @@
 
 <?php $data = $database -> select( 'items', [ 'id', 'text' ] ); ?>
 
-<div class="container-main container flex flex-row justify-center items-start">
-    <ul class="list-group text-white w-96 mr-10">
+<div class="container-main container flex flex-col md:flex-row items-center md:justify-center">
+    <ul class="list-group text-white w-4/5 md:max-w-full lg:w-96 mb-10 md:mr-10">
         <?php
             foreach( $data as $item ) {
                 echo '<li id="item-'. $item[ 'id' ] .'" class="p-1 pl-2 mb-1 flex flex-row justify-between items-center border border-white/[.20] rounded">';
@@ -23,7 +23,7 @@
 
     <form id="add-form" action="_inc/add-item.php" method="post">
         <p>
-            <textarea id="text" class="resize-none w-96 mb-1 p-2 border border-white/[.20] rounded bg-inherit text-white" name="message" placeholder="Do it !" rows="3"></textarea>
+            <textarea id="text" class="resize-none w-72 md:w-96 mb-1 p-2 border border-white/[.20] rounded bg-inherit text-white" name="message" placeholder="Do it !" rows="3"></textarea>
         </p>
 
         <!-- <p>
