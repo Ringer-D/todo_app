@@ -1,15 +1,23 @@
 (function($){
 
 // Add form -------------------------------------------- 
-var form = $('#add-form');
+let form = $('#add-form');
+    list = $('#item-list');
     input = form.find('#text');
 
 input.val('').focus();
 
+// Settings 
+let animation = {
+        startColor: '#00803D',
+        endColor: list.find( 'li' ).css('backgroundColor') || '#1F2937',
+        delay: 200
+};
+
 form.on('submit', function(event) {
     event.preventDefault();
     
-    var req = $.ajax({
+    let req = $.ajax({
         type: "POST",
         url: form.attr('action'),
         data: form.serialize()
@@ -17,23 +25,16 @@ form.on('submit', function(event) {
     
     req.done( function( data ) {
         if( data === 'success' ) {
-        
-            
-        
-                
-                $.ajax({ url: '/todo_app' }).done( function(html) {
+                $.ajax({ url: baseUrl }).done( function(html) {
                     var newItem = $( html ).find( 'li:last-child' );
                     
-                    newItem.appendTo('.list-group')
-                        .css({ backgroundColor: '#00803D' })
-                        .delay(200)
-                        .animate({ backgroundColor: '#1F2937' });
+                    newItem.appendTo( list )
+                        .css({ backgroundColor: animation.startColor })
+                        .delay( animation.delay )
+                        .animate({ backgroundColor: animation.endColor });
                     
                     input.val('');
                 });
-                
-
-
         };
     });
 });
@@ -46,11 +47,9 @@ input.keypress( function(event) {
 })
 
 // Edit Form ----------------------------------------
-
 $( '#edit-form' ).find('#text').trigger('select');
 
 // Delete Form -------------------------------------------------
-
 $( '#delete-form' ).on( 'submit', function( event ) {
     return confirm('Really ?');
 });

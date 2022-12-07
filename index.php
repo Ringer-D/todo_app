@@ -7,7 +7,7 @@
 <?php $data = $database -> select( 'items', [ 'id', 'text' ] ); ?>
 
 <div class="container-main container flex flex-row justify-center items-start">
-    <ul class="list-group text-white w-96 mr-10">
+    <ul id="item-list" class="list-group text-white w-96 mr-10">
         <?php
             foreach( $data as $item ) {
                 echo '<li id="item-'. $item[ 'id' ] .'" class="p-1 pl-2 mb-1 flex flex-row justify-between items-center border border-white/[.20] rounded">';
