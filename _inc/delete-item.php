@@ -12,5 +12,5 @@ require_once 'config.php';
 
 
 if( $deleted ) {
-    header("Location: $site_url/index.php");
+    header("Location: $base_url/index.php");
 }

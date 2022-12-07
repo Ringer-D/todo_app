@@ -28,7 +28,7 @@
             <input type="hidden" name="id" value="<?php echo $_GET[ 'id' ] ?>">
             <input type="submit" value="edit item" class="btn p-2 mr-2 border border-white/[.20] rounded bg-inherit hover:bg-green-700 text-white hover:cursor-pointer">
             <div class="controls">
-                <a href="<?php echo $site_url ?>" class="back-link text-sm hover:text-red-500">back</a>
+                <a href="<?php echo $base_url ?>" class="back-link text-sm hover:text-red-500">back</a>
             </div>
         </div>
     </form>

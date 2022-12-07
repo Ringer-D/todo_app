@@ -16,7 +16,7 @@ $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
 //global variables
-$site_url = 'http://localhost/todo_app';
+$base_url = 'http://localhost/todo_app';
 
 // connect to DB
 use Medoo\Medoo;
