@@ -10,6 +10,7 @@ if( $_POST['message'] ) {
     $id = $database -> insert( 'items', [
         'text' => $_POST['message']
     ] );
+    $newId = $database -> id();
 } else {
     die();
 }
@@ -17,6 +18,12 @@ if( $_POST['message'] ) {
 
 
 if( $id ) {
-    die('success');
+    $message = json_encode([
+        'status'    => 'success',
+        'id'        => $newId
+         
+    ]);
+
+    die( $message );
 }
 

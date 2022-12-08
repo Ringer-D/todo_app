@@ -20,13 +20,14 @@ form.on('submit', function(event) {
     let req = $.ajax({
         type: "POST",
         url: form.attr('action'),
-        data: form.serialize()
+        data: form.serialize(),
+        dataType: 'json'
     });
     
     req.done( function( data ) {
-        if( data === 'success' ) {
+        if( data.status === 'success' ) {
                 $.ajax({ url: baseUrl }).done( function(html) {
-                    var newItem = $( html ).find( 'li:last-child' );
+                    var newItem = $( html ).find( '#item-' + data.id );
                     
                     newItem.appendTo( list )
                         .css({ backgroundColor: animation.startColor })
