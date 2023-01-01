@@ -4,31 +4,36 @@
 let form = $('#add-form');
     list = $('#item-list');
     input = form.find('#text');
-    data = [];
-    purchase = localStorage.getItem( 'purchase' );
-    if( !purchase ) {
-        purchase = localStorage.setItem( 'purchase', JSON.stringify([]) )
-    }
-    itemId = $( list.find( 'li' ) );
 
 input.val('').focus();
+
+// Done animate with local storage ------------------------------ 
+let arrId = [];
+    purchase = localStorage.getItem( 'purchase' );
+    itemId = $( list.find( 'li' ) );
+    
+if( window.location.href === baseUrl + '/' || window.location.href.indexOf( "index.php" ) > -1 ) {
+    if( !purchase || !itemId.length ) {
+        localStorage.setItem( 'purchase', JSON.stringify([]) );
+    }
+}
 
 if( purchase ) {
     purchase = JSON.parse(purchase);
 
     purchase.forEach(item => {
-        data.push(item);
+        arrId.push(item);
     });
 }
 
 itemId = itemId.toArray();
 if( purchase && itemId ) {
     itemId.forEach(item => {
-        if( purchase.indexOf(item.id) !== -1 ) {
+        if( purchase.includes( item.id ) ) {
             $(item).addClass('green-done');
         }
     });
-}
+} 
 
 // Functions 
 function removeA(arr) {
@@ -50,9 +55,8 @@ let addAnimation = {
 };
 
 let clickAnimation = {
-    startColor: list.find( 'li' ).css('backgroundColor'),
-    endColor: '#00803D',
-    delay: 200
+    color: list.find( 'li' ).css('backgroundColor') || '#1F2937',
+    colorDone: '#00803D',
 };
 
 form.on('submit', function(event) {
@@ -68,7 +72,7 @@ form.on('submit', function(event) {
     req.done( function( data ) {
         if( data.status === 'success' ) {
                 $.ajax({ url: baseUrl }).done( function(html) {
-                    var newItem = $( html ).find( '#item-' + data.id );
+                    let newItem = $( html ).find( '#item-' + data.id );
                     
                     newItem.appendTo( list )
                         .css({ backgroundColor: addAnimation.startColor })
@@ -76,6 +80,32 @@ form.on('submit', function(event) {
                         .animate({ backgroundColor: addAnimation.endColor });
                     
                     input.val('');
+
+                    newItem.click(function ( e ) { 
+                        let purchase = localStorage.getItem( 'purchase' );
+                        purchase = JSON.parse( purchase );
+                        if( !purchase || !purchase.includes( this.id ) ) {
+                            if( !arrId.includes( this.id ) ) {
+                                arrId.push( this.id );
+                            }
+                            localStorage.setItem( 'purchase', JSON.stringify( arrId ) );
+                            purchase = localStorage.getItem( 'purchase' );
+                            purchase = JSON.parse( purchase );
+                            if( purchase.includes( this.id ) ) {
+                                console.log(this);
+                                $( this ).addClass( 'green-done' ).css({ backgroundColor: clickAnimation.colorDone });
+                            }
+                        }else {
+                            removeA( arrId, this.id );
+                            localStorage.setItem( 'purchase', JSON.stringify( arrId ) );
+                            purchase = localStorage.getItem( 'purchase' );
+                            purchase = JSON.parse( purchase )
+                            if( !purchase.includes( this.id ) ) { 
+                                console.log(this);
+                                $( this ).removeClass( 'green-done' ).css({ backgroundColor: clickAnimation.color });
+                            }
+                        }
+                    });
                 });
         };                                                       
     });
@@ -90,32 +120,27 @@ input.keypress( function(event) {
 
 
 $(list.find( 'li' )).click(function ( e ) { 
+    let purchase = localStorage.getItem( 'purchase' );
+    purchase = JSON.parse( purchase );
     if( !purchase || !purchase.includes( this.id ) ) {
-        if( !data.includes( this.id ) ) {
-            data.push( this.id );
+        if( !arrId.includes( this.id ) ) {
+            arrId.push( this.id );
         }
-        localStorage.setItem( 'purchase', JSON.stringify( data ) );
-        let purchase = localStorage.getItem( 'purchase' );
+        localStorage.setItem( 'purchase', JSON.stringify( arrId ) );
+        purchase = localStorage.getItem( 'purchase' );
         purchase = JSON.parse( purchase );
-        if( purchase.indexOf( this.id ) !== -1 ) {
+        if( purchase.includes( this.id ) ) {
             $( this ).addClass( 'green-done' );
         }
-    }
-});
-
-$(list.find( 'li' )).click(function (e) {
-    if( !purchase.includes( this.id ) ) {
-        return
     }else {
-        removeA( data, this.id );
-        localStorage.setItem( 'purchase', JSON.stringify(data) );
-        let purchase = localStorage.getItem( 'purchase' );
+        removeA( arrId, this.id );
+        localStorage.setItem( 'purchase', JSON.stringify( arrId ) );
+        purchase = localStorage.getItem( 'purchase' );
         purchase = JSON.parse( purchase )
-        console.log( purchase );
         if( !purchase.includes( this.id ) ) { 
             $( this ).removeClass( 'green-done' );
         }
-    } 
+    }
 });
 
 
